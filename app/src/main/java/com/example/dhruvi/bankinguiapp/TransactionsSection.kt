@@ -21,7 +21,6 @@ import androidx.compose.material.icons.rounded.LocalCafe
 import androidx.compose.material.icons.rounded.LocalPizza
 import androidx.compose.material.icons.rounded.Movie
 import androidx.compose.material.icons.rounded.ShoppingCart
-import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
