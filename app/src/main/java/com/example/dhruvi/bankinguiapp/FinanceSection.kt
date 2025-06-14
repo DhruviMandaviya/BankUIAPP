@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.StarHalf
 import androidx.compose.material.icons.rounded.MonetizationOn
 import androidx.compose.material.icons.rounded.Money
 import androidx.compose.material.icons.rounded.StarHalf
@@ -32,7 +33,7 @@ import com.example.dhruvi.bankinguiapp.ui.theme.OrangeStart
 import com.example.dhruvi.bankinguiapp.ui.theme.PurpleStart
 
 val financeList:List<Finance> = listOf(
-    Finance(icon = Icons.Rounded.StarHalf,
+    Finance(icon = Icons.AutoMirrored.Rounded.StarHalf,
         name = "My\nBusiness",
         backgroundColor = OrangeStart),
 

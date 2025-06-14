@@ -15,7 +15,6 @@ val PurpleEnd = Color(0xFFDF8FEC)
 
 val BlueStart = Color(0xFF2196F3)
 val BlueEnd = Color(0xFF79C3FD)
-val CardBorderColor = Color(0xFF3D4C9F)
 
 val OrangeStart = Color(0xFFFF8400)
 val OrangeEnd = Color(0xFFFDA35F)
