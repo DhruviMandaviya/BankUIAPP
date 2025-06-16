@@ -58,9 +58,8 @@ val currencyList = listOf(
     Currency("YEN", 18.68f, 20.65f, Icons.Rounded.CurrencyYen),
 )
 
-@Preview
 @Composable
-fun CurrenciesSection() {
+fun CurrenciesSection( ) {
     var isVisible by remember {
         mutableStateOf(false)
     }

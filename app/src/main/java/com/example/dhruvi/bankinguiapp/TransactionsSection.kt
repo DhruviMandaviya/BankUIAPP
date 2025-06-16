@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -33,7 +34,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.yml.charts.axis.AxisData
+import co.yml.charts.common.extensions.formatToSinglePrecision
+import co.yml.charts.common.model.Point
+import co.yml.charts.ui.linechart.LineChart
+import co.yml.charts.ui.linechart.model.GridLines
+import co.yml.charts.ui.linechart.model.IntersectionPoint
+import co.yml.charts.ui.linechart.model.Line
+import co.yml.charts.ui.linechart.model.LineChartData
+import co.yml.charts.ui.linechart.model.LinePlotData
+import co.yml.charts.ui.linechart.model.SelectionHighlightPoint
+import co.yml.charts.ui.linechart.model.SelectionHighlightPopUp
+import co.yml.charts.ui.linechart.model.ShadowUnderLine
 import com.example.dhruvi.bankinguiapp.data.Transactions
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import kotlin.math.abs
 
 val allTransactionsList= listOf(
     Transactions("Starbucks", "June 8, 2025", -6.50, Icons.Rounded.LocalCafe,"VISA"),
@@ -70,6 +86,7 @@ fun TransactionsSection(selectedFilter : String ) {
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(16.dp)
         )
+//        TransactionLineChart()
         if (filteredList.isEmpty()) {
             Text(
                 text = "No transactions for $selectedFilter",
@@ -127,7 +144,7 @@ fun TransactionItem(transaction: Transactions) {
         }
 
         Text(
-            text = "${if (transaction.amount < 0) "-" else "+"}$${kotlin.math.abs(transaction.amount)}",
+            text = "${if (transaction.amount < 0) "-" else "+"}$${abs(transaction.amount)}",
             style = MaterialTheme.typography.bodyLarge.copy(
                 color = if (transaction.amount < 0) Color.Red else Color(0xFF4CAF50),
                 fontWeight = FontWeight.Bold

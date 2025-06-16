@@ -57,6 +57,8 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    implementation ("co.yml:ycharts:2.1.0")
+
     // system UI controller
     implementation(libs.accompanist.systemuicontroller)
 

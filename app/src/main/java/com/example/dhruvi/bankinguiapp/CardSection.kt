@@ -38,28 +38,28 @@ import com.example.dhruvi.bankinguiapp.ui.theme.PurpleStart
 val cards : List<Card> = listOf(
     Card(
         cardType="VISA",
-        cardNumber="1234 5678 9012 3456",
+        cardNumber="**** **** **** 3456",
         cardName="Saving",
         balance=157.78,
         color = getGradient(PurpleStart, PurpleEnd)
     ),
     Card(
         cardType="MASTER CARD",
-        cardNumber="6584 5678 1242 3896",
+        cardNumber="**** **** **** 3896",
         cardName="Business",
         balance=1907.78,
         color = getGradient(BlueStart, BlueEnd)
     ),
     Card(
-        cardType="VISA",
-        cardNumber="6734 7913 7891 0236",
-        cardName="Reword",
-        balance=17.78,
+        cardType="DEBIT CARD",
+        cardNumber="**** **** **** 0236",
+        cardName="Saving",
+        balance=177.78,
         color = getGradient(OrangeStart, OrangeEnd)
     ),
     Card(
-        cardType="MASTER CARD",
-        cardNumber="5683 5427 9301 5710",
+        cardType="REWORD CARD",
+        cardNumber="**** **** **** 5710",
         cardName="Saving",
         balance=393.78,
         color = getGradient(GreenStart, GreenEnd)
@@ -72,12 +72,12 @@ fun getGradient(startColor: Color, endColor:Color):Brush {
     )
 }
 
+
 @Composable
 fun CardSection(selectedCardType:String, onCardSelected:(String)->Unit){
     LazyRow {
         items(cards.size)
         { index->
-
             CardItem(
                 card = cards[index],
                 isSelected = selectedCardType == cards[index].cardType,
@@ -100,7 +100,7 @@ fun CardItem(
 
     val cardModifier = if (isSelected) {
         Modifier
-            .offset(x = 2.dp, y = 2.dp) // Slight offset to "push" it down-right
+            .offset(x = 2.dp, y = 2.dp)
             .shadow(
                 elevation = 10.dp,
                 shape = RoundedCornerShape(25.dp),
